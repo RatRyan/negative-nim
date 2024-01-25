@@ -1,6 +1,4 @@
 <script setup>
-const actions = ['look', 'move'];
-
 const dialogue = ref('');
 const error = ref('');
 const userInput = ref('');
@@ -14,13 +12,6 @@ function performCommand() {
 
   command.action = inputSequence[0];
   command.target = inputSequence[2];
-  
-  error.value = '';
-  if (!actions.includes(command.action)) {
-    error.value = 'you cant do that!';
-    userInput.value = '';
-    return;
-  }
 
   userInput.value = '';
 }
