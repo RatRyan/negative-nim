@@ -59,7 +59,7 @@ const areas = [
 
 let currentArea = reactive({
   name: 'forest',
-  dialogue: 'you awake in a yada yada',
+  dialogue: 'you awake in a forest continuing down a path humming a tune.',
   connections: ['town'],
 });
 const userInput = ref('');
@@ -104,5 +104,9 @@ function loadArea(newArea: string) {
     <input type="text" v-model="userInput" />
     <button @click="performCommand()">submit</button>
     <p>{{ error }}</p>
+    <p>Help</p>
+    <ul>
+      <li>move</li>
+    </ul>
   </div>
 </template>
