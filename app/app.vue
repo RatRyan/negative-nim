@@ -2,13 +2,13 @@
 const areas = [
   {
     name: 'forest',
-    dialogue: 'you awake in a forest yada yada',
+    dialogue: 'You awake in a forest and are met with a path and you walk down it humming a tune.',
     connections: [1],
   },
   {
     name: 'town',
     dialogue: `
-      finally, after hours of walking you come up upon a small town.
+      Finally, after hours of walking you come up upon a small town.
       Do you want to go to the tavern, or continue through the city?`,
     connections: [2, 3],
   },
