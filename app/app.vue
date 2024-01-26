@@ -25,14 +25,14 @@ const areas = [
     dialogue: `As you go to sit down the bar keeper come to you and offers you a
       drink you accept and need to dig in your pockets and get some gold to give
       to the bar tender.`,
-    connections: [''],
+    connections: [''], // Connects to the gold counting minigame
   },
   {
     name: 'city',
     dialogue: `Walking through the town the air is filled with the
       smell of fresh bread being backed and blue skies, but just as
       you get towards the outskirts of the town you hear a feint cry for help...`,
-    connections: [],
+    connections: ['ignore', 'investigate'],
   },
   {
     name: 'ignore',
@@ -40,20 +40,18 @@ const areas = [
       blissfully ignorant of the screams and will never findout for you will just
       keep walking for eternity.That is what you did from birth and will continue
       to do until death.`,
-    connections: [],
+    connections: ['end'],
   },
   {
     name: 'investigate',
     dialogue: `Wanting to help to help whoever might be in danger you decide to
-      go and investigate the soundsand see a cottage on fire!`,
-    connections: [],
+      go and investigate the sounds and see a cottage on fire!`,
+    connections: ['fire'],
   },
   {
     name: 'fire',
-    dialogue: `As you go to sit down the bar keeper come to you and offers you a
-      drink you accept and need to dig in your pockets and get some gold to give
-      to the bar tender.`,
-    connections: [],
+    dialogue: `You Instantly jump into action trying to put out the fires!`,
+    connections: [''], // Connects to the fire fighting minigame
   },
 ];
 
