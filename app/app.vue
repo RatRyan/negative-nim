@@ -76,6 +76,7 @@ function performCommand() {
   command.action = inputSequence[0];
   userInput.value = '';
 }
+
 </script>
 
 <template>
