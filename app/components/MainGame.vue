@@ -9,7 +9,7 @@ const command = ref();
 function executeCommand() {
   messageHistory.push({
     command: command.value,
-    result: 'yeah! that sounds right!',
+    result: '(put the actual output of the command here...)',
   });
   command.value = '';
 }
@@ -37,7 +37,7 @@ function executeCommand() {
       </div>
     </div>
     <div class="graphics">
-      <div></div>
+      <img src="/town.png">
     </div>
   </div>
 </template>
@@ -78,5 +78,11 @@ function executeCommand() {
 .graphics {
   width: 50%;
   height: 100%;
+  border-left: ridge 5px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 </style>
