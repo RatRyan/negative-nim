@@ -9,7 +9,7 @@
         </div>
       </div>
     </div>
-    <div class="game">
+    <div class="content">
       <slot />
     </div>
   </div>
@@ -57,9 +57,9 @@
   height: 30px;
 }
 
-.game {
+.content {
   background-color: #161414;
-  flex-grow: 1;
+  height: 89%;
   margin: 18px 3px 3px 3px;
   border: inset 3px;
   box-sizing: border-box;
