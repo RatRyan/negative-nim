@@ -1,6 +1,11 @@
 export function useGame() {
   const areas = [
     {
+      name: 'forest',
+      dialogue: `You wake up to find yourself lying on the damp forest floor. The canopy overhead filters the sunlight, casting dappled shadows on the ground. The air is thick with the scent of pine and earth. You have no memory of how you got here or where you are. As you stand up, you notice a narrow path winding its way through the trees. The forest seems both mysterious and inviting. You realize that your only choice is to venture forth and discover what lies ahead.`,
+      actions: ['town'],
+    },
+    {
       name: 'town',
       dialogue:
         'finally, after hours of walking you come up upon a small town. Do you want to go to the tavern, or continue through the city?',
@@ -56,7 +61,7 @@ export function useGame() {
     actions: [''],
   });
 
-  const hasCharacter = useState("hasCharcter", () => false);
+  const hasCharacter = useState('hasCharcter', () => false);
 
   return {
     currentArea,
