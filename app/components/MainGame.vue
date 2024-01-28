@@ -1,22 +1,31 @@
 <script setup lang="ts">
+import NimMiniGame from '@/components/NimMiniGame.vue';
+import { ref } from 'vue';
+
 type Message = {
-  command: string;
-  result: string;
+ command: string;
+ result: string;
 };
-const messageHistory = reactive<Message[]>([{command: "", result: "This shit aint nothing to me man"}]);
+
+const messageHistory = ref<Message[]>([{command: "", result: "This shit aint nothing to me man"}]);
 const command = ref();
+const showNimMiniGame = ref(false);
 
 function executeCommand() {
-  messageHistory.push({
-    command: command.value,
-    result: '(put the actual output of the command here...)',
-  });
-  command.value = '';
+ if (command.value === 'nim') {
+    showNimMiniGame.value = true;
+ } else {
+    messageHistory.value.push({
+      command: command.value,
+      result: '(put the actual output of the command here...)',
+    });
+    command.value = '';
+ }
 }
 </script>
 
 <template>
-  <div class="wrapper">
+ <div class="wrapper">
     <div class="command-line">
       <div class="history">
         <Message
@@ -39,7 +48,8 @@ function executeCommand() {
     <div class="graphics">
       <img src="/town.png">
     </div>
-  </div>
+    <NimMiniGame v-if="showNimMiniGame" />
+ </div>
 </template>
 
 <style scoped>
@@ -86,3 +96,4 @@ function executeCommand() {
   }
 }
 </style>
+
