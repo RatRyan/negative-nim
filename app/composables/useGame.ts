@@ -49,14 +49,17 @@ export function useGame() {
       actions: [],
     },
   ];
-  
+
   const currentArea = reactive({
     name: '',
     dialogue: '',
     actions: [''],
   });
 
+  const hasCharacter = useState("hasCharcter", () => false);
+
   return {
     currentArea,
+    hasCharacter,
   };
 }
