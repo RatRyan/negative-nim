@@ -6,5 +6,6 @@ const { hasCharacter } = useGame();
   <NuxtLayout>
     <CharacterCreator v-if="!hasCharacter"></CharacterCreator>
     <MainGame v-else></MainGame>
+    <NimMiniGame></NimMiniGame>
   </NuxtLayout>
 </template>
