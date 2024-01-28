@@ -1,9 +1,16 @@
 <script setup lang="ts">
+type Message = {
+  command: string;
+  result: string;
+};
+const messageHistory = reactive<Message[]>([{command: "", result: "This shit aint nothing to me man"}]);
 const command = ref();
-const commandHistory = ref<string[]>([]);
 
 function executeCommand() {
-  commandHistory.value.push(command.value);
+  messageHistory.push({
+    command: command.value,
+    result: 'yeah! that sounds right!',
+  });
   command.value = '';
 }
 </script>
@@ -12,17 +19,25 @@ function executeCommand() {
   <div class="wrapper">
     <div class="command-line">
       <div class="history">
-        <p v-for="command in commandHistory.slice().reverse()">> {{ command }}</p>
+        <Message
+          v-for="i in messageHistory.slice().reverse()"
+          :command="i.command"
+          :result="i.result"
+        />
       </div>
-      <input
-        @keyup.enter="executeCommand()"
-        type="text"
-        v-model="command"
-        placeholder="enter command here..."
-      />
+      <div class="prompt">
+        <BootstrapIcon name="caret-right-fill"></BootstrapIcon>
+        <input
+          @keyup.enter="executeCommand()"
+          type="text"
+          v-model="command"
+          placeholder="enter command here..."
+          autofocus
+        />
+      </div>
     </div>
     <div class="graphics">
-      <img src="/image.png" />
+      <div></div>
     </div>
   </div>
 </template>
@@ -44,23 +59,24 @@ function executeCommand() {
   overflow-y: scroll;
   display: flex;
   flex-direction: column-reverse;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
-input {
-  height: 30px;
-  font-size: 20px;
-  border: outset 3px;
-  background-color: #161414;
-  color: white;
+.prompt {
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: outset 5px;
+  i {
+    margin: 5px 5px;
+  }
+  input {
+    all: unset;
+    flex-grow: 1;
+  }
 }
 .graphics {
   width: 50%;
   height: 100%;
-  border-left: ridge 10px;
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
 }
 </style>

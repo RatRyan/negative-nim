@@ -9,10 +9,8 @@
         </div>
       </div>
     </div>
-    <div class="content-wrapper">
-      <div class="content">
-        <slot />
-      </div>
+    <div class="content">
+      <slot />
     </div>
   </div>
 </template>
@@ -22,8 +20,8 @@
   background-color: #dcdfde;
   width: 60vw;
   height: 60vh;
-  min-width: 900px;
-  min-height: 600px;
+  min-width: 1280px;
+  min-height: 720px;
   padding: 5px;
   border: outset 3px white;
   border-radius: 1px;
@@ -61,20 +59,10 @@
   height: 30px;
 }
 
-.content-wrapper {
+.content {
   background-color: #161414;
   height: 89%;
   margin: 18px 3px 3px 3px;
   border: inset 3px;
-}
-.content {
-  height: 100%;
-  width: 100%;
-}
-
-.message-log {
-  height: 100px;
-  width: 100px;
-  overflow-y: scroll;
 }
 </style>
