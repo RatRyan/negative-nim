@@ -44,7 +44,7 @@ function executeCommand() {
   overflow-y: scroll;
   display: flex;
   flex-direction: column-reverse;
-  justify-content: start;
+  justify-content: flex-end;
 }
 input {
   height: 30px;
