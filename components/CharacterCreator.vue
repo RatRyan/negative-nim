@@ -1,5 +1,16 @@
 <script setup lang="ts">
-const { enterMainGame, characterClass } = useGame();
+const { enterMainGame } = useGame();
+const { characterInfo } = useCharacter();
+
+function handleEnterMainGame() {
+  if (
+    characterInfo.value.characterClass == '' ||
+    characterInfo.value.name == ''
+  ) {
+    return;
+  }
+  enterMainGame();
+}
 </script>
 
 <template>
@@ -17,7 +28,7 @@ const { enterMainGame, characterClass } = useGame();
             id="warrior"
             name="characterClass"
             value="warrior"
-            v-model="characterClass"
+            v-model="characterInfo.characterClass"
           />
         </div>
       </div>
@@ -33,7 +44,7 @@ const { enterMainGame, characterClass } = useGame();
             id="warrior"
             name="characterClass"
             value="warrior"
-            v-model="characterClass"
+            v-model="characterInfo.characterClass"
           />
         </div>
       </div>
@@ -50,7 +61,7 @@ const { enterMainGame, characterClass } = useGame();
             id="warrior"
             name="characterClass"
             value="warrior"
-            v-model="characterClass"
+            v-model="characterInfo.characterClass"
           />
         </div>
       </div>
@@ -58,9 +69,9 @@ const { enterMainGame, characterClass } = useGame();
     <div class="start">
       <div class="name">
         <label>Enter Your Name:</label>
-        <input type="text" />
+        <input type="text" v-model="characterInfo.name" />
       </div>
-      <button>Start Game</button>
+      <button @click="handleEnterMainGame()">Start Game</button>
     </div>
   </div>
 </template>
