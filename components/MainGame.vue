@@ -19,12 +19,10 @@ function executeCommand() {
 					commandWorked = true;
 					area.enterArea(action);
 					// if the player wins or loses, go to the game over screen
-					switch (area.currentArea.value.name) {
-						case "win":
-						case "lose":
-							gotoGameOver();
-							return;
-					}
+          if (area.currentArea.value.name.includes("lose") || area.currentArea.value.name.includes("win")) {
+            gotoGameOver();
+            return;
+          }
 					messageHistory.push({
 						command: command.value,
 						result: "You go to " + area.currentArea.value.name + ".",

@@ -82,6 +82,7 @@ export function useArea() {
 			actions: ["win, lose"],
 			image: "",
 		},
+		
 	];
 
 	const currentArea = useState<Area>("currentArea", () => areas[0]);
