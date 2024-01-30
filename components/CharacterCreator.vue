@@ -25,9 +25,9 @@ function handleEnterMainGame() {
           <p>Select:</p>
           <input
             type="radio"
-            id="warrior"
+            id="rogue"
             name="characterClass"
-            value="warrior"
+            value="rogue"
             v-model="characterInfo.characterClass"
           />
         </div>
@@ -57,9 +57,9 @@ function handleEnterMainGame() {
           <p>Select:</p>
           <input
             type="radio"
-            id="warrior"
+            id="mage"
             name="characterClass"
-            value="warrior"
+            value="mage"
             v-model="characterInfo.characterClass"
           />
         </div>
@@ -96,10 +96,17 @@ function handleEnterMainGame() {
   justify-content: space-evenly;
   border: ridge 3px;
   margin: 2px 2px 2px 2px;
+  input[type='radio'] {
+    width: 20px;
+    height: 20px;
+    accent-color: #00ff00;
+    outline: #00ff00;
+  }
 }
 .select {
-  justify-content: center;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .start {
@@ -111,8 +118,8 @@ function handleEnterMainGame() {
   button {
     all: unset;
     padding: 5px;
-    border: ridge 4px;
-    color: #00ff01;
+    border: ridge 2px;
+    color: #00ff00;
     background-color: transparent;
     cursor: pointer;
   }
@@ -121,7 +128,7 @@ function handleEnterMainGame() {
   }
   input {
     all: unset;
-    border: ridge 4px;
+    border: ridge 2px;
   }
 }
 .name {
