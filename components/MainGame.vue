@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const game = useGame();
+const area = useArea();
 type Message = {
   command: string;
   result: string;
@@ -8,7 +8,7 @@ const messageHistory = reactive<Message[]>([]);
 const command = ref();
 
 function executeCommand() {
-  game.enterArea('town');
+  area.enterArea('town');
   messageHistory.push({
     command: command.value,
     result: '(put the actual output of the command here...)',

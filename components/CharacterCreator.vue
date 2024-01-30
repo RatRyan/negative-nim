@@ -1,15 +1,15 @@
 <script setup lang="ts">
-const { enterMainGame } = useGame();
+const { gotoMainGame } = useGameState();
 const { characterInfo } = useCharacter();
 
-function handleEnterMainGame() {
+function startGame() {
   if (
     characterInfo.value.characterClass == '' ||
     characterInfo.value.name == ''
   ) {
     return;
   }
-  enterMainGame();
+  gotoMainGame();
 }
 </script>
 
@@ -70,7 +70,7 @@ function handleEnterMainGame() {
         <label>Enter Your Name:</label>
         <input type="text" v-model="characterInfo.name" />
       </div>
-      <button @click="handleEnterMainGame()">Start Game</button>
+      <button @click="startGame()">Start Game</button>
     </div>
   </div>
 </template>

@@ -1,5 +1,11 @@
-export function useGame() {
-  const areas = [
+export function useArea() {
+  type Area = {
+    name: string;
+    dialogue: string;
+    actions: string[];
+    image: string;
+  };
+  const areas: Area[] = [
     {
       name: 'forest',
       dialogue: `You wake up to find yourself lying on the damp forest floor. The canopy overhead filters the sunlight, casting dappled shadows on the ground. The air is thick with the scent of pine and earth. You have no memory of how you got here or where you are. As you stand up, you notice a narrow path winding its way through the trees. The forest seems both mysterious and inviting. You realize that your only choice is to venture forth and discover what lies ahead.`,
@@ -25,7 +31,7 @@ export function useGame() {
       dialogue:
         'The group sees you approaching and all get up and start heading towards you. You look back at the door and debate running but its too late...',
       actions: ['lose'],
-      // Image: '/images/.png'
+      image: '/images/.png',
     },
     {
       name: 'bar',
@@ -35,11 +41,11 @@ export function useGame() {
       image: '/images/tavern.png',
     },
     {
-      // When Nim is current location display game
       name: 'nim',
       dialogue:
         'You sit down and the bar keeper explains the rules of the game. You are given 10 matches and the goal is to not be the one to take the last match. You can take 1, 2, or 3 matches at a time.',
       actions: ['win', 'lose'],
+      image: '',
     },
     {
       name: 'leave',
@@ -70,61 +76,26 @@ export function useGame() {
       image: '/images/house-fire.png',
     },
     {
-      // displays fire game
       name: 'fire',
       dialogue: '',
       actions: ['win, lose'],
+      image: '',
     },
   ];
 
-  type GameComponent = 'CharacterCreator' | 'MainGame' | 'GameOver';
-  type GameState = {
-    component: GameComponent;
-    currentArea: {
-      name: string;
-      dialogue: string;
-      actions: string[];
-    };
-  };
-  const gameState = useState<GameState>('gameState', () => ({
-    component: 'CharacterCreator',
-    currentArea: {
-      name: '',
-      dialogue: '',
-      actions: [''],
-    },
-  }));
-
-  function gotoCharacterCreator() {
-    gameState.value.component = 'CharacterCreator';
-  }
-
-  function gotoMainGame() {
-    gameState.value.component = 'MainGame';
-    gameState.value.currentArea.name = areas[0].name;
-    gameState.value.currentArea.dialogue = areas[0].dialogue;
-    gameState.value.currentArea.actions = areas[0].actions;
-    console.log(enterArea('forest'));
-  }
+  const currentArea = useState<Area>('currentArea', () => areas[0]);
 
   function enterArea(areaName: string) {
     const area = areas.find((a) => a.name === areaName);
     if (area) {
-      gameState.value.currentArea.name = area.name;
-      gameState.value.currentArea.dialogue = area.dialogue;
-      gameState.value.currentArea.actions = area.actions;
+      currentArea.value.name = area.name;
+      currentArea.value.dialogue = area.dialogue;
+      currentArea.value.actions = area.actions;
     }
   }
 
-  function gotoGameOver() {
-    gameState.value.component = 'GameOver';
-  }
-
   return {
+    currentArea,
     enterArea,
-    gameState,
-    gotoCharacterCreator,
-    gotoMainGame,
-    gotoGameOver,
   };
 }
