@@ -23,13 +23,13 @@
 
 <style>
 .window {
-  background-color: #dcdfde;
+  background-color: #BEC7C9;
   width: 63vw;
   height: 60vh;
   min-width: 1280px;
   min-height: 720px;
   padding: 5px;
-  border: outset 3px white;
+  border: ridge 2px white;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -78,7 +78,7 @@
   background-color: #161414;
   height: calc(100% - 18px);
   overflow: auto;
-  margin: 18px 5px 5px 5px;
+  margin: 30px 5px 5px 5px;
   border: inset 3px;
 }
 </style>
