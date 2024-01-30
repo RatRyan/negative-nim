@@ -8,14 +8,31 @@ const messageHistory = reactive<Message[]>([]);
 const command = ref();
 
 function executeCommand() {
-	// let tempArea = area.currentArea.value;
-	area.enterArea(command.value);
-	messageHistory.push({
-		command: command.value,
-		result: "You enter " + area.currentArea.value.name + ".",
-	});
+	switch (command.value) {
+		case "clear":
+			messageHistory.splice(0, messageHistory.length + 1);
+		default:
+			let commandWorked = false;
+			area.currentArea.value.actions.forEach((action) => {
+				if (command.value === action) {
+					commandWorked = true;
+					area.enterArea(action);
+					messageHistory.push({
+						command: command.value,
+						result: "You go to " + area.currentArea.value.name + ".",
+					});
+					displayCurrentArea();
+				}
+			});
+			if (!commandWorked) {
+				messageHistory.push({
+					command: command.value,
+					result: "I don't understand that command.",
+				});
+			}
+			break;
+	}
 	command.value = "";
-	displayCurrentArea();
 }
 
 onMounted(() => {
@@ -23,15 +40,16 @@ onMounted(() => {
 });
 
 function displayCurrentArea() {
-  messageHistory.push({
-    command: "",
-    result: area.currentArea.value.dialogue,
-  });
+	messageHistory.push({
+		command: "",
+		result: area.currentArea.value.dialogue,
+	});
 
-  messageHistory.push({
-    command: "",
-    result: 'Where would you like to go next? ' + area.currentArea.value.actions
-  });
+	messageHistory.push({
+		command: "",
+		result:
+			"Where would you like to go next? " + area.currentArea.value.actions,
+	});
 }
 </script>
 
