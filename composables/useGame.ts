@@ -62,6 +62,8 @@ export function useGame() {
 		{
 			// displays fire game
 			name: "fire",
+			dialogue:
+				'',
 			actions: ["win, lose"],
 		},
 	];
@@ -86,10 +88,24 @@ export function useGame() {
 
 	function startGame() {
 		gameState.value.component = "CharacterCreator";
+
 	}
 
 	function enterMainGame() {
 		gameState.value.component = "MainGame";
+		gameState.value.currentArea.name = areas[0].name;
+		gameState.value.currentArea.dialogue = areas[0].dialogue;
+		gameState.value.currentArea.actions = areas[0].actions;
+		console.log(enterArea("forest"));
+	}
+
+	function enterArea(areaName: string) {
+		const area = areas.find((a) => a.name === areaName);
+		if (area) {
+			gameState.value.currentArea.name = area.name;
+			gameState.value.currentArea.dialogue = area.dialogue;
+			gameState.value.currentArea.actions = area.actions;
+		}
 	}
 
 	function endGame() {
@@ -97,6 +113,7 @@ export function useGame() {
 	}
 
 	return {
+		enterArea,
 		gameState,
 		startGame,
 		enterMainGame,

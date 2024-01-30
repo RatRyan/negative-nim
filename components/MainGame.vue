@@ -1,15 +1,14 @@
 <script setup lang="ts">
-const { gameState } = useGame();
+const game = useGame();
 type Message = {
   command: string;
   result: string;
 };
-const messageHistory = reactive<Message[]>([
-  { command: '', result: 'This shit aint nothing to me man' },
-]);
+const messageHistory = reactive<Message[]>([]);
 const command = ref();
 
 function executeCommand() {
+  game.enterArea('town');
   messageHistory.push({
     command: command.value,
     result: '(put the actual output of the command here...)',
