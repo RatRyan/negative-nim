@@ -23,13 +23,14 @@
 
 <style>
 .window {
-  background-color: #dcdfde;
+  box-shadow: 3px 3px 16px 12px #212121;
+  background-color: #bec7c9;
   width: 63vw;
   height: 60vh;
   min-width: 1280px;
   min-height: 720px;
   padding: 5px;
-  border: outset 3px white;
+  border: outset .2rem white;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -77,8 +78,8 @@
 .content-wrapper {
   background-color: #161414;
   height: calc(100% - 18px);
-  overflow: auto;
-  margin: 18px 5px 5px 5px;
+  overflow: hidden;
+  margin: 30px 5px 5px 5px;
   border: inset 3px;
 }
 </style>
