@@ -43,11 +43,6 @@ function executeCommand() {
 </template>
 
 <style scoped>
-.wrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-}
 .command-line {
   width: 50%;
   height: 100%;
