@@ -8,7 +8,7 @@ const messageHistory = reactive<Message[]>([]);
 const command = ref();
 
 function executeCommand() {
-	let tempArea = area.currentArea.value;
+	// let tempArea = area.currentArea.value;
 	area.enterArea(command.value);
 	messageHistory.push({
 		command: command.value,
@@ -30,7 +30,7 @@ function displayCurrentArea() {
 
   messageHistory.push({
     command: "",
-    result: 'Where would you like to go next?' + area.currentArea.value.actions
+    result: 'Where would you like to go next? ' + area.currentArea.value.actions
   });
 }
 </script>
