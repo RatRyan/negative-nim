@@ -1,9 +1,12 @@
 <script setup lang="ts">
+const { gameState } = useGame();
 type Message = {
   command: string;
   result: string;
 };
-const messageHistory = reactive<Message[]>([{command: "", result: "This shit aint nothing to me man"}]);
+const messageHistory = reactive<Message[]>([
+  { command: '', result: 'This shit aint nothing to me man' },
+]);
 const command = ref();
 
 function executeCommand() {
@@ -16,7 +19,7 @@ function executeCommand() {
 </script>
 
 <template>
-  <div class="wrapper">
+  <div class="content">
     <div class="command-line">
       <div class="history">
         <Message
@@ -37,7 +40,7 @@ function executeCommand() {
       </div>
     </div>
     <div class="graphics">
-      <img src="/town.png">
+      <img src="/town.png" />
     </div>
   </div>
 </template>

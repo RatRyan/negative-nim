@@ -55,22 +55,40 @@ export function useGame() {
     },
   ];
 
-  const currentArea = reactive({
-    name: '',
-    dialogue: '',
-    actions: [''],
-  });
-
-  type GameState = 'CharacterCreator' | 'MainGame' | 'GameOver';
-
-  const gameState = useState<GameState>('gameState', () => 'CharacterCreator');
+  type GameComponent = 'CharacterCreator' | 'MainGame' | 'GameOver';
+  type GameState = {
+    component: GameComponent;
+    currentArea: {
+      name: string;
+      dialogue: string;
+      actions: string[];
+    };
+  };
+  const gameState = useState<GameState>('gameState', () => ({
+    component: 'MainGame',
+    currentArea: {
+      name: '',
+      dialogue: '',
+      actions: [''],
+    },
+  }));
 
   function startGame() {
+    gameState.value.component = 'CharacterCreator';
+  }
 
+  function enterMainGame() {
+    gameState.value.component = 'MainGame';
+  }
+
+  function endGame() {
+    gameState.value.component = 'GameOver';
   }
 
   return {
     gameState,
-    currentArea,
+    startGame,
+    enterMainGame,
+    endGame,
   };
 }

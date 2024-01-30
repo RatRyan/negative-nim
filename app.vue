@@ -4,8 +4,9 @@ const { gameState } = useGame();
 
 <template>
   <NuxtLayout>
-    <CharacterCreator v-if="gameState == 'CharacterCreator'" />
-    <MainGame v-if="gameState == 'MainGame'" />
-    <GameOver v-if="gameState == 'GameOver'" />
+    <!-- I dont like doing this but I can't dynamically render components in Nuxt -->
+    <CharacterCreator v-if="gameState.component == 'CharacterCreator'" />
+    <MainGame v-if="gameState.component == 'MainGame'" />
+    <GameOver v-if="gameState.component == 'GameOver'" />
   </NuxtLayout>
 </template>
