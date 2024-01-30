@@ -18,7 +18,6 @@ function executeCommand() {
 </script>
 
 <template>
-  <div class="content">
     <div class="command-line">
       <div class="history">
         <Message
@@ -39,14 +38,13 @@ function executeCommand() {
       </div>
     </div>
     <div class="graphics">
-      <img src="/town.png" />
     </div>
-  </div>
 </template>
 
 <style scoped>
 .content {
   display: flex;
+  box-sizing: border-box;
 }
 .command-line {
   width: 50%;
