@@ -7,6 +7,7 @@ export function useCharacter() {
     name: '',
     characterClass: '',
   }));
+
   return {
     characterInfo,
   };

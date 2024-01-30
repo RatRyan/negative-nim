@@ -1,15 +1,12 @@
 <script setup lang="ts">
-const { gameState, startGame } = useGame();
-onBeforeMount(() => {
-  startGame();
-});
+const { gameState } = useGameState();
 </script>
 
 <template>
   <NuxtLayout>
-    <!-- I dont like doing this but I can't dynamically render components in Nuxt -->
-    <CharacterCreator v-if="gameState.component == 'CharacterCreator'" />
-    <MainGame v-if="gameState.component == 'MainGame'" />
-    <GameOver v-if="gameState.component == 'GameOver'" />
+    <!-- I dont like doing this but I can't dynamically components renders in Nuxt -->
+    <CharacterCreator v-if="gameState == 'CharacterCreator'" />
+    <MainGame v-if="gameState == 'MainGame'" />
+    <GameOver v-if="gameState == 'GameOver'" />
   </NuxtLayout>
 </template>
