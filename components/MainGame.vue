@@ -78,7 +78,9 @@ function displayCurrentArea() {
 			</div>
 		</div>
 		<div class="graphics">
-			<img :src="area.currentArea.value.image" />
+			<img :src="area.currentArea.value.image" 
+				v-if="area.currentArea.value.image != ''"/>
+			<NimMainGame v-else></NimMainGame>
 		</div>
 	</div>
 </template>
