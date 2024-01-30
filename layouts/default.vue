@@ -1,5 +1,11 @@
 <script setup lang="ts">
 const { gotoCharacterCreator } = useGameState();
+const { resetArea } = useArea();
+
+function restartGame() {
+	gotoCharacterCreator();
+  resetArea();
+}
 </script>
 
 <template>
@@ -15,7 +21,9 @@ const { gotoCharacterCreator } = useGameState();
 					<button>
 						<BootstrapIcon name="window-fullscreen"></BootstrapIcon>
 					</button>
-					<button><BootstrapIcon name="x-lg" @click="gotoCharacterCreator"></BootstrapIcon></button>
+					<button>
+						<BootstrapIcon name="x-lg" @click="restartGame()"></BootstrapIcon>
+					</button>
 				</div>
 			</div>
 		</div>

@@ -96,7 +96,7 @@ export function useArea() {
 		},
 	];
 
-  const currentArea = useState<Area>('currentArea', () => areas[0]);
+	const currentArea = useState<Area>("currentArea", () => areas[0]);
 
 	function enterArea(areaName: string) {
 		if (currentArea.value.actions.includes(areaName)) {
@@ -110,8 +110,13 @@ export function useArea() {
 		}
 	}
 
+	function resetArea() {
+		currentArea.value = areas[0];
+	}
+
 	return {
 		currentArea,
 		enterArea,
+		resetArea,
 	};
 }
