@@ -48,7 +48,6 @@ function handleEnterMainGame() {
           />
         </div>
       </div>
-
       <div class="character-panel">
         <div class="div">
           <h3><b>Class: Mage</b></h3>
@@ -115,6 +114,7 @@ function handleEnterMainGame() {
     border: ridge 4px;
     color: #00ff01;
     background-color: transparent;
+    cursor: pointer;
   }
   button:hover {
     color: #00b600;
