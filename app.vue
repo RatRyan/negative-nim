@@ -7,8 +7,6 @@ onBeforeMount(() => {
 });
 </script>
 
-<!-- CHANGE SHIT TO WORK URGENT -->
-
 <template>
   <NuxtLayout>
     <!-- I dont like doing this but I can't dynamically render components in Nuxt -->
