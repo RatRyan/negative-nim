@@ -83,7 +83,7 @@ export function useArea() {
 		},
 	];
 
-	const currentArea = useState<Area>("currentArea", () => areas[0]);
+	const currentArea = useState<Area>("currentArea", () => areas[1]);
 
 	function enterArea(areaName: string) {
 		if (currentArea.value.actions.includes(areaName)) {
