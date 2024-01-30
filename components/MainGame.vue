@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const area = useArea();
+const { gotoGameOver } = useGameState();
 type Message = {
 	command: string;
 	result: string;
@@ -17,6 +18,12 @@ function executeCommand() {
 				if (command.value === action) {
 					commandWorked = true;
 					area.enterArea(action);
+          switch (area.currentArea.value.name) {
+            case "win":
+            case "lose":
+              gotoGameOver();
+              return;
+          }
 					messageHistory.push({
 						command: command.value,
 						result: "You go to " + area.currentArea.value.name + ".",
