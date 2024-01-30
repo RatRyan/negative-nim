@@ -13,7 +13,7 @@
         </div>
       </div>
     </div>
-    <div class="content">
+    <div class="content-wrapper">
       <slot />
     </div>
   </div>
@@ -70,7 +70,7 @@
   height: 30px;
 }
 
-.content {
+.content-wrapper {
   background-color: #161414;
   height: 89%;
   margin: 18px 5px 5px 5px;

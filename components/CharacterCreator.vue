@@ -1,16 +1,13 @@
-<script setup lang="ts">
-const { hasCharacter } = useGame();
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="wrapper">
-    <button>wouldn't it be cool if this worked?</button>
   </div>
 </template>
 
 <style scoped>
 .character-panel {
   width: 33%;
-  height: 100%
+  height: 100%;
 }
 </style>

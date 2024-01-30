@@ -61,10 +61,16 @@ export function useGame() {
     actions: [''],
   });
 
-  const hasCharacter = useState('hasCharcter', () => false);
+  type GameState = 'CharacterCreator' | 'MainGame' | 'GameOver';
+
+  const gameState = useState<GameState>('gameState', () => 'CharacterCreator');
+
+  function startGame() {
+
+  }
 
   return {
+    gameState,
     currentArea,
-    hasCharacter,
   };
 }
