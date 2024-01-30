@@ -8,7 +8,9 @@ defineProps({
 <template>
   <div class="message">
     <div v-if="command" class="command">
-      <p><BootstrapIcon name="caret-right-fill"></BootstrapIcon>{{ command }}</p>
+      <p>
+        <BootstrapIcon name="caret-right-fill"></BootstrapIcon>{{ command }}
+      </p>
     </div>
     <p>{{ result }}</p>
   </div>
@@ -16,11 +18,11 @@ defineProps({
 
 <style scoped>
 p {
-  color: #00ff01;
+  color: #00ff00;
   margin: 0;
 }
 i {
-  color: #00ff01;
+  color: #00ff00;
   font-size: 1rem;
 }
 .message {
