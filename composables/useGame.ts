@@ -78,7 +78,7 @@ export function useGame() {
     };
   };
   const gameState = useState<GameState>('gameState', () => ({
-    component: 'MainGame',
+    component: 'CharacterCreator',
     currentArea: {
       name: '',
       dialogue: '',
