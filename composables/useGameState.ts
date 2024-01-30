@@ -2,7 +2,7 @@ export function useGameState() {
   type GameState = 'CharacterCreator' | 'MainGame' | 'GameOver';
   const gameState = useState<GameState>('gameState', () => 'CharacterCreator');
 
-  function gotoCharacterCreator() {
+  function goToCharacterCreator() {
     gameState.value = 'CharacterCreator';
   }
 
@@ -16,7 +16,7 @@ export function useGameState() {
 
   return {
     gameState,
-    gotoCharacterCreator,
+    goToCharacterCreator,
     gotoMainGame,
     gotoGameOver,
   };
