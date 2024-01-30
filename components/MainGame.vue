@@ -46,6 +46,9 @@ function executeCommand() {
 </template>
 
 <style scoped>
+.content {
+  display: flex;
+}
 .command-line {
   width: 50%;
   height: 100%;
