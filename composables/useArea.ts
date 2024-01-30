@@ -86,11 +86,13 @@ export function useArea() {
   const currentArea = useState<Area>('currentArea', () => areas[0]);
 
   function enterArea(areaName: string) {
-    const area = areas.find((a) => a.name === areaName);
-    if (area) {
-      currentArea.value.name = area.name;
-      currentArea.value.dialogue = area.dialogue;
-      currentArea.value.actions = area.actions;
+    if (currentArea.value.actions.includes(areaName)) {
+      const area = areas.find((a) => a.name === areaName);
+      if (area) {
+        currentArea.value.name = area.name;
+        currentArea.value.dialogue = area.dialogue;
+        currentArea.value.actions = area.actions;
+      }
     }
   }
 

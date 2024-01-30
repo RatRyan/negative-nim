@@ -17,6 +17,5 @@ onBeforeMount(() => {
       :endGameCondition="currentArea.name"
       :endGameString="currentArea.dialogue"
     />
-    <!-- <GameOver endGameString="You Win!" endGameCondition="lose" /> -->
   </NuxtLayout>
 </template>
