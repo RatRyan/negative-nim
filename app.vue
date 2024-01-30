@@ -1,10 +1,10 @@
 <script setup lang="ts">
-const { hasCharacter } = useGame();
 </script>
 
 <template>
   <NuxtLayout>
-    <CharacterCreator v-if="!hasCharacter"></CharacterCreator>
-    <MainGame v-else></MainGame>
+    <CharacterCreator />
+    <MainGame />
+    <EndScreen />
   </NuxtLayout>
 </template>

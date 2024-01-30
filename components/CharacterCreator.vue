@@ -4,6 +4,7 @@ const { hasCharacter } = useGame();
 
 <template>
   <div class="wrapper">
+    <button>wouldn't it be cool if this worked?</button>
   </div>
 </template>
 
