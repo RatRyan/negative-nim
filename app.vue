@@ -1,5 +1,8 @@
 <script setup lang="ts">
-const { gameState } = useGame();
+const { gameState, startGame } = useGame();
+onBeforeMount(() => {
+  startGame();
+});
 </script>
 
 <template>
