@@ -23,13 +23,14 @@
 
 <style>
 .window {
+  box-shadow: 3px 3px 16px 12px #212121;
   background-color: #bec7c9;
   width: 63vw;
   height: 60vh;
   min-width: 1280px;
   min-height: 720px;
   padding: 5px;
-  border: ridge 2px white;
+  border: outset .2rem white;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
