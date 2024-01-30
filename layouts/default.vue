@@ -8,7 +8,9 @@
         </div>
         <div>
           <button><BootstrapIcon name="dash-lg"></BootstrapIcon></button>
-          <button><BootstrapIcon name="window-fullscreen"></BootstrapIcon></button>
+          <button>
+            <BootstrapIcon name="window-fullscreen"></BootstrapIcon>
+          </button>
           <button><BootstrapIcon name="x-lg"></BootstrapIcon></button>
         </div>
       </div>
@@ -34,7 +36,7 @@
 }
 
 .window-header {
-  background-color: #0000A8;
+  background-color: #0000a8;
   height: 7%;
   border: inset 2px;
   border-radius: 1px;
@@ -44,7 +46,7 @@
 }
 
 .window-nav {
-  width: 100%;
+  flex: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
