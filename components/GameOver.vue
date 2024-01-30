@@ -1,3 +1,8 @@
+<script setup lang="ts">
+defineProps({
+	endGameString: String,
+});
+</script>
 <template>
-  <p>game over!</p>
+	<h1>{{ endGameString }}</h1>
 </template>
