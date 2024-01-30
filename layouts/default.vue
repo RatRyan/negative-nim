@@ -23,7 +23,7 @@
 
 <style>
 .window {
-  background-color: #BEC7C9;
+  background-color: #bec7c9;
   width: 63vw;
   height: 60vh;
   min-width: 1280px;
@@ -77,7 +77,7 @@
 .content-wrapper {
   background-color: #161414;
   height: calc(100% - 18px);
-  overflow: auto;
+  overflow: hidden;
   margin: 30px 5px 5px 5px;
   border: inset 3px;
 }
