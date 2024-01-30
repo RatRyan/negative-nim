@@ -80,12 +80,23 @@ export function useArea() {
 			name: "fire",
 			dialogue: "Put out all the fires!",
 			actions: ["win, lose"],
-			image: "",
+			image: "/house-fire.png",
 		},
-		
+		{
+			name: "win",
+			dialogue: "You win! CONGRATULATIONS!",
+			actions: [],
+			image: "/town.png",
+		},
+		{
+			name: "lose",
+			dialogue: "You lose! Get good!",
+			actions: [],
+			image: "/house-fire.png",
+		},
 	];
 
-  const currentArea = useState<Area>('currentArea', () => areas[1]);
+  const currentArea = useState<Area>('currentArea', () => areas[0]);
 
 	function enterArea(areaName: string) {
 		if (currentArea.value.actions.includes(areaName)) {
