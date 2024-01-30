@@ -34,7 +34,7 @@
 }
 
 .window-header {
-  background-color: #3a2681;
+  background-color: #0000A8;
   height: 7%;
   border: inset 2px;
   border-radius: 1px;
