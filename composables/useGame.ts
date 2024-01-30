@@ -29,6 +29,13 @@ export function useGame() {
 				"As you go to sit down the bar keeper come to you and offers you a drink if you can win in a game of Nim.",
 			actions: ["nim", "leave"],
 		},
+		{
+			// When Nim is current location display game
+			name: "nim",
+			dialogue:
+				"You sit down and the bar keeper explains the rules of the game. You are given 10 matches and the goal is to not be the one to take the last match. You can take 1, 2, or 3 matches at a time.",
+			actions: ["win", "lose"],				
+		},
     {
       name: "leave",
       dialogue: "You leave the bar and continue on your journey through the town.",
@@ -53,9 +60,8 @@ export function useGame() {
 			actions: ["fire"],
 		},
 		{
+			// displays fire game
 			name: "fire",
-			dialogue:
-				"As you go to sit down the bar keeper come to you and offers you a drink you accept and need to dig in your pockets and get some gold to give to the bar tender.",
 			actions: ["win, lose"],
 		},
 	];
