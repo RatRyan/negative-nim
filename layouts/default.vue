@@ -8,6 +8,7 @@
         </div>
         <div>
           <button><BootstrapIcon name="dash-lg"></BootstrapIcon></button>
+          <button><BootstrapIcon name="window-fullscreen"></BootstrapIcon></button>
           <button><BootstrapIcon name="x-lg"></BootstrapIcon></button>
         </div>
       </div>
@@ -21,7 +22,7 @@
 <style>
 .window {
   background-color: #dcdfde;
-  width: 60vw;
+  width: 63vw;
   height: 60vh;
   min-width: 1280px;
   min-height: 720px;
