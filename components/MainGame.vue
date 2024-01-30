@@ -18,6 +18,7 @@ function executeCommand() {
 </script>
 
 <template>
+  <div class="content">
     <div class="command-line">
       <div class="history">
         <Message
@@ -38,20 +39,19 @@ function executeCommand() {
       </div>
     </div>
     <div class="graphics">
+      <img :src="area.currentArea.value.image" />
     </div>
+  </div>
 </template>
 
 <style scoped>
-.content {
-  display: flex;
-  box-sizing: border-box;
-}
 .command-line {
   width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
+
 .history {
   flex-grow: 1;
   overflow-y: scroll;
@@ -59,28 +59,33 @@ function executeCommand() {
   flex-direction: column-reverse;
   justify-content: flex-start;
 }
+
 .prompt {
   display: flex;
   min-height: 40px;
   align-items: center;
   justify-content: center;
   border: outset 5px;
-  i {
-    margin: 5px 5px;
-  }
-  input {
-    all: unset;
-    flex-grow: 1;
-  }
 }
+
+.prompt i {
+  margin: 5px 5px;
+}
+
+.prompt input {
+  all: unset;
+  flex-grow: 1;
+}
+
 .graphics {
   width: 50%;
   height: 100%;
   border-left: ridge 5px;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+}
+
+.graphics img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 </style>

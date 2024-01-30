@@ -33,6 +33,7 @@
   border-radius: 5px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .window-header {
@@ -52,6 +53,7 @@
   align-items: center;
   margin-right: 7px;
 }
+
 .title {
   display: flex;
   align-items: center;
@@ -74,7 +76,8 @@
 
 .content-wrapper {
   background-color: #161414;
-  height: 89%;
+  height: calc(100% - 18px);
+  overflow: auto;
   margin: 18px 5px 5px 5px;
   border: inset 3px;
 }

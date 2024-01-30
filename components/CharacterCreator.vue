@@ -80,7 +80,6 @@ function startGame() {
   color: #00ff01;
 }
 .content {
-  display: flex;
   flex-direction: column;
 }
 .character-select {
@@ -119,7 +118,6 @@ function startGame() {
     all: unset;
     padding: 5px;
     border: ridge 2px;
-    color: #00ff00;
     background-color: transparent;
     cursor: pointer;
   }
