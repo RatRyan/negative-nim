@@ -9,8 +9,11 @@ const command = ref();
 
 function executeCommand() {
 	switch (command.value) {
+    case "":
+      break;
 		case "clear":
 			messageHistory.splice(0, messageHistory.length + 1);
+      break;
 		default:
 			let commandWorked = false;
 			area.currentArea.value.actions.forEach((action) => {
