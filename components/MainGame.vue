@@ -10,21 +10,26 @@ const command = ref();
 
 function executeCommand() {
 	switch (command.value) {
+		// clear command to clear the message history
 		case "clear":
 			messageHistory.splice(0, messageHistory.length + 1);
-      displayCurrentArea();
-      break
+			displayCurrentArea();
+			break;
 		default:
 			let commandWorked = false;
+			// check if the command is a valid action
 			area.currentArea.value.actions.forEach((action) => {
 				if (command.value === action) {
 					commandWorked = true;
 					area.enterArea(action);
 					// if the player wins or loses, go to the game over screen
-          if (area.currentArea.value.name.includes("lose") || area.currentArea.value.name.includes("win")) {
-            gotoGameOver();
-            return;
-          }
+					if (
+						area.currentArea.value.name.includes("lose") ||
+						area.currentArea.value.name.includes("win")
+					) {
+						gotoGameOver();
+						return;
+					}
 					messageHistory.push({
 						command: command.value,
 						result: "You go to " + area.currentArea.value.name + ".",
@@ -43,10 +48,6 @@ function executeCommand() {
 	command.value = "";
 }
 
-onMounted(() => {
-	displayCurrentArea();
-});
-
 function displayCurrentArea() {
 	messageHistory.push({
 		command: "",
@@ -59,6 +60,10 @@ function displayCurrentArea() {
 			"Where would you like to go next? " + area.currentArea.value.actions,
 	});
 }
+
+onMounted(() => {
+	displayCurrentArea();
+});
 </script>
 
 <template>
@@ -83,8 +88,10 @@ function displayCurrentArea() {
 			</div>
 		</div>
 		<div class="graphics">
-			<img :src="area.currentArea.value.image" 
-				v-if="area.currentArea.value.image != ''"/>
+			<img
+				:src="area.currentArea.value.image"
+				v-if="area.currentArea.value.image != ''"
+			/>
 			<NimMainGame v-else></NimMainGame>
 		</div>
 	</div>
