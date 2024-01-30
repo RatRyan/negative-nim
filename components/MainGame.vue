@@ -15,20 +15,11 @@ function executeCommand() {
 		result: "You enter " + area.currentArea.value.name + ".",
 	});
 	command.value = "";
-	displayCurrentArea;
+	displayCurrentArea();
 }
 
 onMounted(() => {
-	// displayCurrentArea;
-  messageHistory.push({
-    command: "",
-    result: area.currentArea.value.dialogue,
-  });
-
-  messageHistory.push({
-    command: "",
-    result: 'Where would you like to go next? ' + area.currentArea.value.actions
-  });
+	displayCurrentArea();
 });
 
 function displayCurrentArea() {
