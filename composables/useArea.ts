@@ -43,7 +43,7 @@ export function useArea() {
 		{
 			name: "nim",
 			dialogue:
-				"You sit down and the bar keeper explains the rules of the game. You are given 10 matches and the goal is to not be the one to take the last match. You can take 1, 2, or 3 matches at a time.",
+				"You sit down and the bar keeper explains the rules of the game. You are given 12 matches and the goal is to not be the one to take the last match. You can take 1, 2, or 3 matches at a time.",
 			actions: ["win", "lose"],
 			image: "",
 		},
@@ -85,7 +85,7 @@ export function useArea() {
 		
 	];
 
-	const currentArea = useState<Area>("currentArea", () => areas[0]);
+  const currentArea = useState<Area>('currentArea', () => areas[1]);
 
 	function enterArea(areaName: string) {
 		if (currentArea.value.actions.includes(areaName)) {
