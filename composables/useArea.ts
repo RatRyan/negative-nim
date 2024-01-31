@@ -82,10 +82,11 @@ export function useArea() {
 			// Temp until fire is set
 			dialogue: " Two trains are on the same track a distance 100 km apart heading towards one another, each at a speed of 50 km/h. A fly starting out at the front of one train, flies towards the other at a speed of 75 km/h. Upon reaching the other train, the fly turns around and continues towards the first train. How many kilometers does the fly travel before getting squashed in the collision of the two trains? (type answer to continue)",
 			actions: ["75"],
+			image: "/house-fire.png",
 			
 			// dialogue: "Put out all the fires! (click them to put them out)",
 			// actions: ["win", "lose"],
-			image: "fireGame",
+			// image: "fireGame",
 		},
 		{
 			name: "75",

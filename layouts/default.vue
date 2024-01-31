@@ -3,8 +3,8 @@ const { gotoCharacterCreator } = useGameState();
 const { resetArea } = useArea();
 
 function restartGame() {
-	gotoCharacterCreator();
   resetArea();
+	gotoCharacterCreator();
 }
 </script>
 
