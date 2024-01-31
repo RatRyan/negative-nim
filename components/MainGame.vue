@@ -21,6 +21,7 @@ function executeCommand() {
 			area.currentArea.value.actions.forEach((action) => {
 				if (command.value === action) {
 					commandWorked = true;
+					// temp fire game answer until completed
 					area.enterArea(action);
 					// if the player wins or loses, go to the game over screen
 					if (
@@ -53,12 +54,6 @@ function displayCurrentArea() {
 		command: "",
 		result: area.currentArea.value.dialogue,
 	});
-
-	messageHistory.push({
-		command: "",
-		result:
-			"Where would you like to go next? " + area.currentArea.value.actions,
-	});
 }
 
 onMounted(() => {
@@ -89,7 +84,8 @@ onMounted(() => {
 		</div>
 		<div class="graphics">
 			<NimMainGame v-if="area.currentArea.value.image === 'nimGame'"></NimMainGame>
-			<FireGame v-else-if="area.currentArea.value.image === 'fireGame'"></FireGame>
+			<!-- Temp disabled -->
+			<!-- <FireGame v-else-if="area.currentArea.value.image === 'fireGame'"></FireGame> -->
 			<img
 				:src="area.currentArea.value.image"
 				v-else="area.currentArea.value.image"

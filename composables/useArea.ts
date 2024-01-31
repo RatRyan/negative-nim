@@ -57,7 +57,7 @@ export function useArea() {
 		{
 			name: "city",
 			dialogue:
-				"Walking through the town the air is filled with the smell of fresh bread being backed and blue skies, but just as you get towards the outskirts of the town you hear a feint cry for help... (type 'investigate' or  to continue)",
+				"Walking through the town the air is filled with the smell of fresh bread being backed and blue skies, but just as you get towards the outskirts of the town you hear a feint cry for help... (type 'investigate' or 'ignore' to continue)",
 			actions: ["ignore", "investigate"],
 			image: "/town.png",
 		},
@@ -81,11 +81,17 @@ export function useArea() {
 
 			// Temp until fire is set
 			dialogue: " Two trains are on the same track a distance 100 km apart heading towards one another, each at a speed of 50 km/h. A fly starting out at the front of one train, flies towards the other at a speed of 75 km/h. Upon reaching the other train, the fly turns around and continues towards the first train. How many kilometers does the fly travel before getting squashed in the collision of the two trains? (type answer to continue)",
-			actions: ["75"]
+			actions: ["75"],
 			
 			// dialogue: "Put out all the fires! (click them to put them out)",
 			// actions: ["win", "lose"],
 			image: "fireGame",
+		},
+		{
+			name: "75",
+			dialogue: "That was the correct answer! You saved the house! (type 'win' to continue)",
+			actions: ["win"],
+			image: "/town.png",
 		},
 		{
 			name: "win",
