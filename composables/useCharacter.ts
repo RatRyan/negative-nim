@@ -8,7 +8,13 @@ export function useCharacter() {
     characterClass: '',
   }));
 
+  function createCharacter(name: string, characterClass: string) {
+    characterInfo.value.name == name;
+    characterInfo.value.characterClass == characterClass;
+  }
+
   return {
     characterInfo,
+    createCharacter,
   };
 }
