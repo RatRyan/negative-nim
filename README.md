@@ -35,9 +35,10 @@
 Game will switch from MineSweeper to a console 
 adventure emulator..
 
-## Updated Road Map
+### Updated Road Map
 ![the UML didn't load right ;/](https://github.com/RatRyan/negative-nim/blob/main/road-map.png)
 
+### Updated Plan
 - Screens
 	- Character select (M)
 	- Puzzle (M)
