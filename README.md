@@ -32,7 +32,12 @@
 		- Skills (C)
 
 # -Nim (iteration 2)
-Game will switch from MineSweeper to a console adventure emulator..
+Game will switch from MineSweeper to a console 
+adventure emulator..
+
+## Updated Road Map
+(https://github.com/RatRyan/negative-nim/blob/main/road-map.png)
+
 - Screens
 	- Character select (M)
 	- Puzzle (M)
@@ -45,4 +50,20 @@ Game will switch from MineSweeper to a console adventure emulator..
 		- Paden can you add more here plz
 	- FireGame (C)
 		- Clickable flames
-		- 
+			- disappear after click
+		- after flames are gone goes to win
+			- if runs out of time, lose game
+- Paths
+	- Select character (M)
+		- Allows user to: 
+			- select a character
+			- enter name
+	- Main Game (M)
+		- allow the user to:
+			- continue through the paths
+			- slight error handling
+			- clear terminal (w)
+	- Game Over (M)
+		- Display win or lose
+			- aswell as the dialogue of the win/lose screen
+
