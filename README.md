@@ -48,7 +48,9 @@ adventure emulator..
 	- terminal emulator (M)
 - Puzzle Logic (M)
 	- NimGame (S)
-		- Paden can you add more here plz
+		- Selectable number of objects to remove or "nim"
+    		- NPC follows up after a delay for visual effect when it nims objects
+      		- User nims 1 - NPC nims 3, user nims 2 - npc nims 2, user nims 3 - npm nims 1 
 	- FireGame (C)
 		- Clickable flames
 			- disappear after click
