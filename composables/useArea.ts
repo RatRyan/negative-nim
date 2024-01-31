@@ -45,7 +45,7 @@ export function useArea() {
 			dialogue:
 				"You sit down and the bar keeper explains the rules of the game. You are given 12 matches and the goal is to not be the one to take the last match. You can take 1, 2, or 3 matches at a time.",
 			actions: ["win", "lose"],
-			image: "",
+			image: "nimGame",
 		},
 		{
 			name: "leave",
@@ -78,9 +78,9 @@ export function useArea() {
 		{
 			// Fire Game
 			name: "fire",
-			dialogue: "Put out all the fires!",
-			actions: ["win, lose"],
-			image: "/house-fire.png",
+			dialogue: "Put out all the fires! (click them to put them out)",
+			actions: ["win", "lose"],
+			image: "fireGame",
 		},
 		{
 			name: "win",

@@ -88,11 +88,12 @@ onMounted(() => {
 			</div>
 		</div>
 		<div class="graphics">
+			<NimMainGame v-if="area.currentArea.value.image === 'nimGame'"></NimMainGame>
+			<FireGame v-else-if="area.currentArea.value.image === 'fireGame'"></FireGame>
 			<img
 				:src="area.currentArea.value.image"
-				v-if="area.currentArea.value.image != ''"
+				v-else="area.currentArea.value.image"
 			/>
-			<NimMainGame v-else></NimMainGame>
 		</div>
 	</div>
 </template>
