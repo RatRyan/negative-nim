@@ -56,7 +56,7 @@ adventure emulator..
 			- disappear after click
 		- after flames are gone goes to win
 			- if runs out of time, lose game
-- Paths
+- Paths / Walkthrough
 	- Select character (M)
 		- Allows user to: 
 			- select a character
@@ -69,4 +69,12 @@ adventure emulator..
 	- Game Over (M)
 		- Display win or lose
 			- aswell as the dialogue of the win/lose screen
+ 
+### Issues
+Main issue is the reduction of scope within the first week. We orignally planned to build minesweeper stuff, but instead we reduced scope down to build nim instead
+There were also slight issues with web frameworks, cause they can often be finicky but not too terribly bad
 
+### Tests
+- main game can be imported 
+- char composable is imported properly
+- heres the tests we had
